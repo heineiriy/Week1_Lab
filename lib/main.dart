@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Laboratory Activity 2'),
     );
   }
 }
@@ -54,18 +54,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // Edit these to show your actual details
+  String studentName = 'Henry Gutierrez';
+  String course = 'Bachelor of Science in Information Technology';
+  String section = '3-6';
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  // Counter and increment removed per request
 
   @override
   Widget build(BuildContext context) {
@@ -102,21 +96,19 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: .center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('You have pushed the button this many times:'),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              studentName,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            Text(course),
+            Text(section),
+            const SizedBox(height: 16),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // Floating action button removed
     );
   }
 }
